@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <style>
+        /* Custom styles for toast messages */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1rem;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .toast-warning {
+            background-color: #f39c12;
+        }
+
+        .toast-info {
+            background-color: #3498db;
+        }
+
+        .toast-success {
+            background-color: #2ecc71;
+        }
+
+        .toast.fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-inter">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="fixed top-4 right-4 z-50">
+        {% for category, message in messages %}
+        <div class="toast toast-{{ category }} mb-2">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <div class="container mx-auto p-6 sm:p-10 md:p-12 lg:p-16">
+        <h1 class="text-3xl font-semibold text-center text-blue-600 mb-8">Personal Expense Tracker</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Add Income</h2>
+                <form id="incomeForm" action="/add_transaction" method="POST" class="space-y-4">
+                    <div>
+                        <label for="incomeDate" class="block text-gray-700 text-sm font-bold mb-2">Date:</label>
+                        <input type="date" id="incomeDate" name="date" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <div id="incomeDateError" class="text-red-500 text-xs italic" style="display: none;"></div>
+                    </div>
+                    <div>
+                        <label for="incomeDescription" class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
+                        <input type="text" id="incomeDescription" name="description" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <div id="incomeDescriptionError" class="text-red-500 text-xs italic" style="display: none;"></div>
+                    </div>
+                    <div>
+                        <label for="incomeCategory" class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
+                        <input type="text" id="incomeCategory" name="category" value="Income" readonly class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200">
+                        <div id="incomeCategoryError" class="text-red-500 text-xs italic" style="display: none;"></div>
+                    </div>
+                    <div>
+                        <label for="incomeAmount" class="block text-gray-700 text-sm font-bold mb-2">Amount:</label>
+                        <input type="number" id="incomeAmount" name="amount" required min="0" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <div id="incomeAmountError" class="text-red-500 text-xs italic" style="display: none;"></div>
+                    </div>
+                    <input type="hidden" name="type" value="income">
+                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Income</button>
+                </form>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Add Expense</h2>
+                <form id="expenseForm" action="/add_transaction" method="POST" class="space-y-4">
+                    <div>
+                        <label for="expenseDate" class="block text-gray-700 text-sm font-bold mb-2">Date:</label>
+                        <input type="date" id="expenseDate" name="date" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <div id="expenseDateError" class="text-red-500 text-xs italic" style="display: none;"></div>
+                    </div>
+                    <div>
+                        <label for="expenseDescription" class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
+                        <input type="text" id="expenseDescription" name="description" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <div id="expenseDescriptionError" class="text-red-500 text-xs italic" style="display: none;"></div>
+                    </div>
+                    <div>
+                        <label for="expenseCategory" class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
+                        <select id="expenseCategory" name="category" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="food">Food</option>
+                            <option value="housing">Housing</option>
+                            <option value="transport">Transport</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="utilities">Utilities</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="education">Education</option>
+                            <option value="travel">Travel</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div id="expenseCategoryError" class="text-red-500 text-xs italic" style="display: none;"></div>
+                    </div>
+                    <div>
+                        <label for="expenseAmount" class="block text-gray-700 text-sm font-bold mb-2">Amount:</label>
+                        <input type="number" id="expenseAmount" name="amount" required min="0" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <div id="expenseAmountError" class="text-red-500 text-xs italic" style="display: none;"></div>
+                    </div>
+                    <input type="hidden" name="type" value="expense">
+                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Expense</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Transaction History</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full leading-normal shadow-md rounded-lg overflow-hidden">
+                    <thead class="bg-gray-200 text-gray-700">
+                        <tr>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Date</th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Description</th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Category</th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Amount</th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Type</th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Delete</th> </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        {% for transaction in transactions %}
+                        <tr>
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">{{ transaction.date }}</td>
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">{{ transaction.description }}</td>
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">{{ transaction.category }}</td>
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">{{ transaction.amount }}</td>
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">{{ transaction.type }}</td>
+                            <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                                <form action="{{ url_for('delete_transaction', transaction_id=transaction.id) }}" method="POST">
+                                    <input type="hidden" name="transaction_id" value="{{ transaction.id }}">
+                                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline text-xs">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Balance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700">Total Income:</h3>
+                    <p class="text-green-600 font-bold text-xl">{{ balance.income }}</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700">Total Expenses:</h3>
+                    <p class="text-red-600 font-bold text-xl">{{ balance.expenses }}</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700">Net Balance:</h3>
+                    <p class="text-blue-600 font-bold text-xl">{{ balance.net }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/export_csv" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Export to CSV</a>
+                <a href="/category_breakdown" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">View Category Breakdown</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to display toast messages
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('fade-out');
+                setTimeout(() => toast.remove(), 500); // Remove after fade out
+            }, 2000); // Display for 2 seconds
+        }
+
+        // Auto-fadeout for flash messages
+        document.addEventListener('DOMContentLoaded', function() {
+            const toasts = document.querySelectorAll('.toast');
+            toasts.forEach(toast => {
+                setTimeout(() => {
+                    toast.classList.add('fade-out');
+                    setTimeout(() => toast.remove(), 500);
+                }, 3000); // Display for 3 seconds
+            });
+        });
+
+        // --- Form Validation ---
+        function validateForm(formId) {
+            const form = document.getElementById(formId);
+            let isValid = true;
+
+            const dateInput = form.querySelector('[name="date"]');
+            const descriptionInput = form.querySelector('[name="description"]');
+            const amountInput = form.querySelector('[name="amount"]');
+            const categoryInput = form.querySelector('[name="category"]'); // Only for expense form
+
+            const dateError = document.getElementById(formId.replace('Form', '') + 'DateError');
+            const descriptionError = document.getElementById(formId.replace('Form', '') + 'DescriptionError');
+            const amountError = document.getElementById(formId.replace('Form', '') + 'AmountError');
+            const categoryError = document.getElementById(formId.replace('Form', '') + 'CategoryError'); // Only for expense form
+
+            // Reset error messages
+            dateError.style.display = 'none';
+            descriptionError.style.display = 'none';
+            amountError.style.display = 'none';
+            if (categoryError) categoryError.style.display = 'none'; // Only for expense form
+
+
+            if (!dateInput.value) {
+                dateError.textContent = 'Date is required';
+                dateError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (!descriptionInput.value) {
+                descriptionError.textContent = 'Description is required';
+                descriptionError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (!amountInput.value || amountInput.value <= 0) {
+                amountError.textContent = 'Amount is required and must be greater than zero';
+                amountError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (categoryInput && !categoryInput.value) { // Only for expense form
+                categoryError.textContent = 'Category must be selected';
+                categoryError.style.display = 'block';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // --- Event Listeners for Form Submission ---
+        document.getElementById('incomeForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (validateForm('incomeForm')) {
+                event.target.submit();
+                showToast('Income added successfully!', 'success');
+            } else {
+                showToast('Please fix the errors in the form.', 'warning');
+            }
+        });
+
+        document.getElementById('expenseForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (validateForm('expenseForm')) {
+                event.target.submit();
+                showToast('Expense added successfully!', 'success');
+            } else {
+                showToast('Please fix the errors in the form.', 'warning');
+            }
+        });
+    </script>
+</body>
+</html>

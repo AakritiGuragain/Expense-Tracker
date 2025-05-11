@@ -1,0 +1,141 @@
+2025-05-11 14:50:53,838 - INFO - Logging configured
+2025-05-11 14:50:53,850 - WARNING -  * Debugger is active!
+2025-05-11 14:50:53,888 - INFO -  * Debugger PIN: 835-182-906
+2025-05-11 14:51:00,144 - INFO - Logging configured
+2025-05-11 14:51:00,159 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-05-11 14:51:00,159 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 14:51:00,166 - INFO -  * Restarting with watchdog (fsevents)
+2025-05-11 14:51:00,971 - INFO - Logging configured
+2025-05-11 14:51:00,979 - WARNING -  * Debugger is active!
+2025-05-11 14:51:01,002 - INFO -  * Debugger PIN: 835-182-906
+2025-05-11 14:51:05,393 - DEBUG - Successfully connected to the database: expenses.db
+2025-05-11 14:51:05,399 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 14:51:05,399 - DEBUG - Income: 1000.0, Expenses: 700.0, Balance: {'income': 1000.0, 'expenses': 700.0, 'net': 300.0}
+2025-05-11 14:51:05,407 - INFO - 127.0.0.1 - - [11/May/2025 14:51:05] "GET / HTTP/1.1" 200 -
+2025-05-11 14:51:05,421 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 14:51:05,422 - DEBUG - Calling create_income_expense_chart with income=1000.0, expenses=700.0
+2025-05-11 14:51:05,543 - DEBUG - Loaded backend macosx version unknown.
+2025-05-11 14:51:05,946 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log", inode=26775321, flags=19100, id=207829822): is_created, is_file, is_modified, is_xattr_mod
+2025-05-11 14:51:05,946 - DEBUG - queue_event <FileCreatedEvent: event_type=created, src_path='/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log', is_directory=False>
+2025-05-11 14:51:05,946 - DEBUG - queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/logs', is_directory=True>
+2025-05-11 14:51:05,947 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log', is_directory=False>
+2025-05-11 14:52:11,980 - INFO - Logging configured
+2025-05-11 14:52:11,996 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-05-11 14:52:11,996 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 14:52:12,006 - INFO -  * Restarting with watchdog (fsevents)
+2025-05-11 14:52:12,798 - INFO - Logging configured
+2025-05-11 14:52:12,806 - WARNING -  * Debugger is active!
+2025-05-11 14:52:12,844 - INFO -  * Debugger PIN: 835-182-906
+2025-05-11 14:52:18,682 - DEBUG - Successfully connected to the database: expenses.db
+2025-05-11 14:52:18,687 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 14:52:18,687 - DEBUG - Income: 1000.0, Expenses: 700.0, Balance: {'income': 1000.0, 'expenses': 700.0, 'net': 300.0}
+2025-05-11 14:52:18,696 - INFO - 127.0.0.1 - - [11/May/2025 14:52:18] "GET / HTTP/1.1" 200 -
+2025-05-11 14:52:18,706 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 14:52:18,706 - DEBUG - Calling create_income_expense_chart with income=1000.0, expenses=700.0
+2025-05-11 14:52:18,842 - DEBUG - Loaded backend macosx version unknown.
+2025-05-11 14:52:19,248 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log", inode=26775321, flags=11000, id=207836529): is_file, is_modified
+2025-05-11 14:52:19,249 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log', is_directory=False>
+2025-05-11 14:56:43,010 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/templates/index.html", inode=26011554, flags=11400, id=207847269): is_file, is_inode_meta_mod, is_modified
+2025-05-11 14:56:43,017 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/templates/index.html', is_directory=False>
+2025-05-11 14:56:53,883 - INFO - Logging configured
+2025-05-11 14:56:53,899 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-05-11 14:56:53,899 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 14:56:53,909 - INFO -  * Restarting with watchdog (fsevents)
+2025-05-11 14:56:54,746 - INFO - Logging configured
+2025-05-11 14:56:54,754 - WARNING -  * Debugger is active!
+2025-05-11 14:56:54,791 - INFO -  * Debugger PIN: 835-182-906
+2025-05-11 14:56:59,232 - DEBUG - Successfully connected to the database: expenses.db
+2025-05-11 14:56:59,236 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 14:56:59,236 - DEBUG - Income: 1000.0, Expenses: 700.0, Balance: {'income': 1000.0, 'expenses': 700.0, 'net': 300.0}
+2025-05-11 14:56:59,245 - INFO - 127.0.0.1 - - [11/May/2025 14:56:59] "GET / HTTP/1.1" 200 -
+2025-05-11 14:56:59,252 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 14:56:59,252 - DEBUG - Calling create_income_expense_chart with income=1000.0, expenses=700.0
+2025-05-11 14:56:59,376 - DEBUG - Loaded backend macosx version unknown.
+2025-05-11 14:56:59,797 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log", inode=26775321, flags=11000, id=207847997): is_file, is_modified
+2025-05-11 14:56:59,797 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log', is_directory=False>
+2025-05-11 15:31:24,237 - DEBUG - Successfully connected to the database: expenses.db
+2025-05-11 15:31:24,243 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 15:31:24,243 - DEBUG - Income: 1000.0, Expenses: 700.0, Balance: {'income': 1000.0, 'expenses': 700.0, 'net': 300.0}
+2025-05-11 15:31:24,254 - INFO - 127.0.0.1 - - [11/May/2025 15:31:24] "GET / HTTP/1.1" 200 -
+2025-05-11 15:31:24,281 - ERROR - Error in income_expense_chart: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 13167276032 and this is thread id 13184065536.
+2025-05-11 15:31:24,282 - INFO - 127.0.0.1 - - [11/May/2025 15:31:24] "[35m[1mGET /income_expense_chart.png HTTP/1.1[0m" 500 -
+2025-05-11 15:31:25,020 - INFO - 127.0.0.1 - - [11/May/2025 15:31:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-11 15:31:28,191 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 15:31:28,404 - DEBUG - Loaded backend macosx version unknown.
+2025-05-11 15:31:46,475 - INFO - Logging configured
+2025-05-11 15:31:46,491 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-05-11 15:31:46,491 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 15:31:46,501 - INFO -  * Restarting with watchdog (fsevents)
+2025-05-11 15:31:47,327 - INFO - Logging configured
+2025-05-11 15:31:47,335 - WARNING -  * Debugger is active!
+2025-05-11 15:31:47,367 - INFO -  * Debugger PIN: 835-182-906
+2025-05-11 15:37:17,997 - INFO - Logging configured
+2025-05-11 15:37:18,036 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log", inode=26775321, flags=11000, id=207975684): is_file, is_modified
+2025-05-11 15:37:18,036 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log', is_directory=False>
+2025-05-11 15:37:31,579 - INFO - Logging configured
+2025-05-11 15:37:31,603 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log", inode=26775321, flags=11000, id=207976967): is_file, is_modified
+2025-05-11 15:37:31,603 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log', is_directory=False>
+2025-05-11 15:40:40,884 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log", inode=26775321, flags=11000, id=207985432): is_file, is_modified
+2025-05-11 15:40:40,886 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log', is_directory=False>
+2025-05-11 15:40:45,553 - INFO - Logging configured
+2025-05-11 15:40:45,577 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log", inode=26775321, flags=11000, id=207985612): is_file, is_modified
+2025-05-11 15:40:45,577 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log', is_directory=False>
+2025-05-11 15:41:06,288 - INFO - Logging configured
+2025-05-11 15:41:06,320 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log", inode=26775321, flags=11000, id=207986021): is_file, is_modified
+2025-05-11 15:41:06,320 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/logs/expense_app_20250511.log', is_directory=False>
+2025-05-11 15:41:37,093 - INFO - Logging configured
+2025-05-11 15:41:37,112 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-05-11 15:41:37,112 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 15:41:37,132 - INFO -  * Restarting with watchdog (fsevents)
+2025-05-11 15:41:37,928 - INFO - Logging configured
+2025-05-11 15:41:37,936 - WARNING -  * Debugger is active!
+2025-05-11 15:41:37,965 - INFO -  * Debugger PIN: 835-182-906
+2025-05-11 15:41:43,828 - DEBUG - Successfully connected to the database: expenses.db
+2025-05-11 15:41:43,835 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 15:41:43,835 - DEBUG - Income: 1000.0, Expenses: 700.0, Balance: {'income': 1000.0, 'expenses': 700.0, 'net': 300.0}
+2025-05-11 15:41:43,846 - INFO - 127.0.0.1 - - [11/May/2025 15:41:43] "GET / HTTP/1.1" 200 -
+2025-05-11 15:41:43,896 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 15:41:43,896 - DEBUG - Calling create_income_expense_chart with income=1000.0, expenses=700.0
+2025-05-11 15:41:44,047 - DEBUG - Loaded backend macosx version unknown.
+2025-05-11 15:42:33,298 - INFO - Logging configured
+2025-05-11 15:42:33,313 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-05-11 15:42:33,313 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 15:42:33,323 - INFO -  * Restarting with watchdog (fsevents)
+2025-05-11 15:42:34,119 - INFO - Logging configured
+2025-05-11 15:42:34,126 - WARNING -  * Debugger is active!
+2025-05-11 15:42:34,151 - INFO -  * Debugger PIN: 835-182-906
+2025-05-11 15:42:53,804 - DEBUG - Successfully connected to the database: expenses.db
+2025-05-11 15:42:53,812 - DEBUG - Query executed and fetched: SELECT * FROM transactions ORDER BY date DESC, params: None
+2025-05-11 15:42:53,813 - DEBUG - Income: 1000.0, Expenses: 700.0, Balance: {'income': 1000.0, 'expenses': 700.0, 'net': 300.0}
+2025-05-11 15:42:53,824 - INFO - 127.0.0.1 - - [11/May/2025 15:42:53] "GET / HTTP/1.1" 200 -
+2025-05-11 15:42:53,839 - ERROR - Error in income_expense_chart: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 13165395968 and this is thread id 13182185472.
+2025-05-11 15:42:53,840 - INFO - 127.0.0.1 - - [11/May/2025 15:42:53] "[35m[1mGET /income_expense_chart.png HTTP/1.1[0m" 500 -
+2025-05-11 15:42:54,036 - INFO - 127.0.0.1 - - [11/May/2025 15:42:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-11 15:43:00,701 - DEBUG - Query executed and committed: DELETE FROM transactions WHERE id = ?, params: (2,)
+2025-05-11 15:43:00,701 - ERROR - delete_transaction: Failed to delete transaction with id 2
+2025-05-11 15:43:00,704 - INFO - 127.0.0.1 - - [11/May/2025 15:43:00] "[32mPOST /delete_transaction/2 HTTP/1.1[0m" 302 -
+2025-05-11 15:43:00,718 - INFO - 127.0.0.1 - - [11/May/2025 15:43:00] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-11 15:43:00,723 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/expenses.db-journal", inode=26782061, flags=19300, id=207994217): is_coalesced, is_created, is_file, is_modified, is_removed, is_xattr_mod
+2025-05-11 15:43:00,723 - DEBUG - queue_event <FileCreatedEvent: event_type=created, src_path='/Users/aakritiguragain/expense_tracker/expenses.db-journal', is_directory=False>
+2025-05-11 15:43:00,725 - DEBUG - queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker', is_directory=True>
+2025-05-11 15:43:00,728 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/expenses.db-journal', is_directory=False>
+2025-05-11 15:43:00,728 - DEBUG - queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/aakritiguragain/expense_tracker/expenses.db-journal', is_directory=False>
+2025-05-11 15:43:00,729 - DEBUG - queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker', is_directory=True>
+2025-05-11 15:43:00,740 - INFO - 127.0.0.1 - - [11/May/2025 15:43:00] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-11 15:43:00,740 - INFO - 127.0.0.1 - - [11/May/2025 15:43:00] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-11 15:43:00,745 - INFO - 127.0.0.1 - - [11/May/2025 15:43:00] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-11 15:43:00,760 - INFO - 127.0.0.1 - - [11/May/2025 15:43:00] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-11 15:46:22,733 - DEBUG - NativeEvent(path="/Users/aakritiguragain/expense_tracker/app.py", inode=26130899, flags=11400, id=208001195): is_file, is_inode_meta_mod, is_modified
+2025-05-11 15:46:22,734 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/aakritiguragain/expense_tracker/app.py', is_directory=False>
+2025-05-11 15:46:22,735 - INFO -  * Detected change in '/Users/aakritiguragain/expense_tracker/app.py', reloading
+2025-05-11 15:46:23,883 - INFO -  * Restarting with watchdog (fsevents)
+2025-05-11 15:56:59,905 - INFO -  * Restarting with watchdog (fsevents)
+2025-05-11 15:57:16,283 - INFO -  * Restarting with watchdog (fsevents)
+2025-05-11 15:57:32,224 - INFO -  * Restarting with watchdog (fsevents)
+2025-05-11 15:59:22,739 - INFO -  * Restarting with watchdog (fsevents)
